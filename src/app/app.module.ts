@@ -20,6 +20,12 @@ import { UpdateTicketComponent } from './Component/Technician/update-ticket/upda
 import { AddTicketComponent } from './Component/User/add-ticket/add-ticket.component';
 import { UserComponent } from './Component/User/user/user.component';
 
+import {HttpClientModule} from '@angular/common/http';
+import { SignupComponent } from './Component/Main/signup/signup.component'
+
+
+
+
 @NgModule({
   declarations: [
       AppComponent,
@@ -40,11 +46,13 @@ import { UserComponent } from './Component/User/user/user.component';
       UpdateTicketComponent,
       AddTicketComponent,
       ShowTicketComponent,
-      UserComponent
+      UserComponent,
+      SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]
