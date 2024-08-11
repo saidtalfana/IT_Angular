@@ -23,7 +23,7 @@ export class ServiceService {
   private API_EQUIPEMENT = 'http://localhost:8080/api/equipment';
   private    API_FAILURE = 'http://localhost:8080/api/failure';
 
-  private     API_SIGNUP = 'http://localhost:8080/api/signup';
+  private     API_SIGNUP = 'http://localhost:8080/signup';
   private      API_LOGIN = 'http://localhost:8080/api/login';
 
   private     API_TICKET = 'http://localhost:8080/api/ticket';
@@ -32,9 +32,13 @@ export class ServiceService {
 
   constructor(private http:HttpClient) { }
 
+
+  
+  
                      //  <?--------------sign up ------------------->
-                   signup(role:Role, signUpRequest:SignUpRequest){
-                        return  this.http.post<Person>(`${this.API_SIGNUP}?role=${role}`,signUpRequest) }
+                   signup(role: string, signUpRequest: SignUpRequest): Observable<any>{
+                        return  this.http.post(`${this.API_SIGNUP}?role=${role}`,signUpRequest) 
+                   }
                      //  <?--------------login up ------------------->
                    signin(loginRequest:LoginRequest):Observable<{ token: string, role: string }> {
                          return this.http.post<{ token: string, role: string }>(`${this.API_LOGIN}`,loginRequest)}

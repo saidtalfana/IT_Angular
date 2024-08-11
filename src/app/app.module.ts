@@ -22,6 +22,10 @@ import { UserComponent } from './Component/User/user/user.component';
 
 import {HttpClientModule} from '@angular/common/http';
 import { SignupComponent } from './Component/Main/signup/signup.component'
+import { MainComponent } from './Component/Main/main/main.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './Component/Main/header/header.component';
+import { HomeComponent } from './Component/Main/home/home.component';
 
 
 
@@ -29,8 +33,6 @@ import { SignupComponent } from './Component/Main/signup/signup.component'
 @NgModule({
   declarations: [
       AppComponent,
-      SigninComponent,
-      SigninComponent,
       AddEquipmentComponent,
       AddFailureComponent,
       AddTechnicianComponent,
@@ -41,18 +43,26 @@ import { SignupComponent } from './Component/Main/signup/signup.component'
       ShowEquipmentComponent,
       ShowTechnicianComponent,
       ShowUserComponent,
+      HeaderComponent,
+      HomeComponent,
+      MainComponent,
+      SigninComponent,
+      SignupComponent,
       ShowTicketComponent,
       TechnicianComponent,
       UpdateTicketComponent,
       AddTicketComponent,
       ShowTicketComponent,
       UserComponent,
-      SignupComponent
+      MainComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    
     ],
   providers: [],
   bootstrap: [AppComponent]

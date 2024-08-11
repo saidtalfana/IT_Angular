@@ -11,7 +11,7 @@ import { Role } from 'src/app/enums/Role';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-  formLogin!: FormGroup;
+  loginForm!: FormGroup;
   errorMessage: string | null = null;
 
   constructor(
@@ -25,18 +25,18 @@ export class SigninComponent implements OnInit {
   }
 
   valide() {
-    this.formLogin = this.fb.group({
+    this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
 
   onSubmit(): void {
-    if (this.formLogin.invalid) {
+    if (this.loginForm.invalid) {
       return;
     }
 
-    const loginRequest: LoginRequest = this.formLogin.value;
+    const loginRequest: LoginRequest = this.loginForm.value;
 
     this.service.signin(loginRequest).subscribe({
       next: (response) => {
