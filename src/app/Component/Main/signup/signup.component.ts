@@ -32,7 +32,7 @@ export class SignupComponent implements OnInit {
   signUp() {
     if (this.signUpForm.valid) {
       const signUpRequest: SignUpRequest = this.signUpForm.value;
-      const role = 'ADMIN';
+      const role = this.signUpForm.value.role;
       this.service.signup(role, signUpRequest).subscribe(() => {
       });
       console.log(signUpRequest)

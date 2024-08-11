@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { LoginRequest } from 'src/app/dto/LoginRequest';
 import { ServiceService } from 'src/app/service/service.service';
 import { Role } from 'src/app/enums/Role';
+import { jwtDecode } from 'jwt-decode';
 
 @Component({
   selector: 'app-signin',
@@ -40,24 +41,24 @@ export class SigninComponent implements OnInit {
 
     this.service.signin(loginRequest).subscribe({
       next: (response) => {
-        const { token, role } = response;
+        const { token} = response;
         localStorage.setItem('jwt', token);
 
-        // Navigate based on user role
-        switch (role) {
-          case Role.ADMIN:
-            this.router.navigate(['/dashboard']);
-            break;
-          case Role.USER:
-            this.router.navigate(['/user']);
-            break;
-          case Role.TECHNICIAN:
-            this.router.navigate(['/technician']);
-            break;
-          default:
-            this.router.navigate(['/access-denied']);
-            break;
+        const decodedToken: any = jwtDecode(response.token);
+
+        if (decodedToken.roles.includes(Role.ADMIN)) {
+          this.router.navigate(['/dashboard']);
+        } 
+        else if (decodedToken.roles.includes(Role.TECHNICIAN)) {
+          this.router.navigate(['/technician']);
+        } 
+        else if (decodedToken.roles.includes(Role.USER)) {
+          this.router.navigate(['/user']);
+        } else {
+          this.router.navigate(['/main']);
         }
+
+       
       },
       error: (err) => {
         this.errorMessage = 'Invalid username or password';

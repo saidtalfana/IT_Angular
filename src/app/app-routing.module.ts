@@ -4,21 +4,19 @@ import { SigninComponent } from './Component/Main/signin/signin.component';
 import { DashboardComponent } from './Component/Dashboard/dashboard/dashboard.component';
 import { UserComponent } from './Component/User/user/user.component';
 import { TechnicianComponent } from './Component/Technician/technician/technician.component';
+import { ChartComponent } from './Component/Dashboard/chart/chart.component';
 
-const routes: Routes = [
-  { path: 'login', component: SigninComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'user', component: UserComponent },
-  { path: 'technician', component: TechnicianComponent },
-  // { path: 'login', component: SigninComponent },
 
-  // { path: 'signup', component: SignUpComponent, canActivate: [AuthGuard], data: { expectedRole: Role.ADMIN } },
-  // { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard], data: { expectedRole: Role.ADMIN } },
-  // { path: 'technician', component: DashTechnicianComponent, canActivate: [AuthGuard], data: { expectedRole: Role.TECHNICIAN } },
-  // { path: 'user', component: DashUserComponent, canActivate: [AuthGuard], data: { expectedRole: Role.USER } },
-  // { path: 'access-denied', component: AuthGuardComponent },
-  // { path: '', redirectTo: '/login', pathMatch: 'full' } // Optional: redirect to login if the path is empty
-];
+  const routes: Routes = [
+    { path: 'dashboard', component: DashboardComponent },
+    { path: 'user', component: UserComponent },
+    { path: 'technician', component: TechnicianComponent },
+    { path: 'chart', component: ChartComponent },
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
+    { path: '**', redirectTo: '/login' }
+  ];
+  
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

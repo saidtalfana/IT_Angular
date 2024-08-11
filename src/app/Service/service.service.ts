@@ -24,7 +24,7 @@ export class ServiceService {
   private    API_FAILURE = 'http://localhost:8080/api/failure';
 
   private     API_SIGNUP = 'http://localhost:8080/signup';
-  private      API_LOGIN = 'http://localhost:8080/api/login';
+  private      API_LOGIN = 'http://localhost:8080/login';
 
   private     API_TICKET = 'http://localhost:8080/api/ticket';
 
