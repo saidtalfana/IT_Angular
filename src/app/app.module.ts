@@ -62,6 +62,7 @@ import { HomeComponent } from './Component/Main/home/home.component';
     ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
+
     
     ],
   providers: [],

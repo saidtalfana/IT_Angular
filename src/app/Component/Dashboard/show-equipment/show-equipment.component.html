@@ -1,1 +1,8 @@
-<p>show-equipment works!</p>
+<div *ngFor="let equipment of equipmentList">
+    <h1>{{ equipment.name }}</h1>
+    <p>{{ equipment.description }}</p>
+    <img *ngIf="equipment.image" [src]="equipment.image" alt="{{ equipment.name }}">
+    <p>Type: {{ equipment.type }}</p>
+    <p>Status: {{ equipment.equipmentStatus }}</p>   
+  </div>
+s  
