@@ -12,9 +12,11 @@ export class LogoutComponent implements OnInit{
   }
 
   constructor(private router:Router){}
-  statu=false
-  logout(statu:boolean){
-  if(statu){
+
+      ckeck=false
+
+  logout(ckeck:boolean){
+  if(ckeck){
      localStorage.removeItem("jwt")
      this.router.navigateByUrl("")
   }

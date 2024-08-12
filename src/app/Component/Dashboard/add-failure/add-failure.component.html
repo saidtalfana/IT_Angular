@@ -1,1 +1,17 @@
-<p>add-failure works!</p>
+<form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+ <div class="form-group">
+      <label for="description">Description:</label><br>
+      <textarea id="description" formControlName="description"  ></textarea>
+    </div>
+
+    <label for="failureType">failureType:</label>
+    <select id="failureType" formControlName="failureType"  required>
+      <option value="SYSTEM">SYSTEM</option>
+      <option value="MONITOR">MONITOR</option>
+      <option value="KEYBOARD">KEYBOARD</option>
+      <option value="MOUSE">MOUSE</option>
+    </select>
+  
+    <button type="submit" class="btn btn-primary" [disabled]="addForm.invalid">Add Failure</button>
+  </form>
+  

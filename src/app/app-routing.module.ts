@@ -8,12 +8,16 @@ import { ChartComponent } from './Component/Dashboard/chart/chart.component';
 import { AddEquipmentComponent } from './Component/Dashboard/add-equipment/add-equipment.component';
 import { ShowEquipmentComponent } from './Component/Dashboard/show-equipment/show-equipment.component';
 import { MainComponent } from './Component/Main/main/main.component';
+import { AddTicketComponent } from './Component/User/add-ticket/add-ticket.component';
+import { ShowTicketComponent } from './Component/Technician/show-ticket/show-ticket.component';
 
 
   const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
     { path: 'user', component: UserComponent },
     { path: 'technician', component: TechnicianComponent },
+    { path: 'addTicket', component: AddTicketComponent },
+    { path: 'showTicket', component: ShowTicketComponent },
     { path: 'main', component: MainComponent },
     { path: 'add', component: AddEquipmentComponent },
     { path: 'edit-equipment/:id', component: AddEquipmentComponent },
