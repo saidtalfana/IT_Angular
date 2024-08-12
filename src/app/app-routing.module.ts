@@ -18,8 +18,8 @@ import { MainComponent } from './Component/Main/main/main.component';
     { path: 'add', component: AddEquipmentComponent },
     { path: 'edit-equipment/:id', component: AddEquipmentComponent },
     { path: 'show-equipment', component: ShowEquipmentComponent },
-    { path: '', redirectTo: '/login', pathMatch: 'full' },
-    { path: '**', redirectTo: '/login' }
+    { path: '', redirectTo: '/main', pathMatch: 'full' },
+    { path: '**', redirectTo: '/main' }
   ];
   
 
