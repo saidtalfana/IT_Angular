@@ -67,8 +67,10 @@ export class ServiceService {
 
 
                      //  <?--------------add equipment ------------------->
-                       AddEquipment(equipement:Equipment):Observable<Equipment>{
-                          return this.http.post<Equipment>(`${this.API_EQUIPEMENT}/add_equipment`,equipement)}
+                     AddEquipment(equipement: Equipment, user_id: number): Observable<Equipment> {
+                      return this.http.post<Equipment>(`${this.API_EQUIPEMENT}/add_equipment?user_id=${user_id}`, equipement);
+                    }
+                    
                      //  <?--------------all equipment ------------------->
                        fetchAllEquipment():Observable<Technician[]>{
                            return this.http.get<Technician[]>(`${this.API_EQUIPEMENT}/all_equipment`)}

@@ -1,1 +1,36 @@
-<p>add-equipment works!</p>
+<form [formGroup]="formAdd" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Equipment Name:</label><br>
+      <input id="name" formControlName="name" type="text"  />
+    </div>
+  
+    <div class="form-group">
+      <label for="description">Description:</label><br>
+      <textarea id="description" formControlName="description"  ></textarea>
+    </div>
+  
+    <div class="form-group">
+      <label for="image">Image:</label><br>
+      <input id="image" formControlName="image" type="text"  />
+
+    </div>
+  
+    <div class="form-group">
+      <label for="type">Type:</label><br>
+      <input id="type" formControlName="type" type="text"  />
+
+    </div>
+    <label for="equipmentStatus">Status:</label>
+    <select id="equipmentStatus" formControlName="equipmentStatus"  required>
+      <option value="WORKING">working</option>
+      <option value="NOT_WORKING">not working</option>
+    </select>
+    <div class="form-group">
+      <label for="userId">user id:</label><br>
+      <input id="userId" formControlName="userId" type="text"  />
+
+    </div>
+  
+    <button type="submit" class="btn btn-primary" [disabled]="formAdd.invalid">Add Equipment</button>
+  </form>
+  

@@ -5,6 +5,7 @@ import { DashboardComponent } from './Component/Dashboard/dashboard/dashboard.co
 import { UserComponent } from './Component/User/user/user.component';
 import { TechnicianComponent } from './Component/Technician/technician/technician.component';
 import { ChartComponent } from './Component/Dashboard/chart/chart.component';
+import { AddEquipmentComponent } from './Component/Dashboard/add-equipment/add-equipment.component';
 
 
   const routes: Routes = [
@@ -12,6 +13,7 @@ import { ChartComponent } from './Component/Dashboard/chart/chart.component';
     { path: 'user', component: UserComponent },
     { path: 'technician', component: TechnicianComponent },
     { path: 'chart', component: ChartComponent },
+    { path: 'add', component: AddEquipmentComponent },
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: '**', redirectTo: '/login' }
   ];
