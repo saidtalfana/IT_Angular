@@ -4,5 +4,6 @@
     <img *ngIf="equipment.image" [src]="equipment.image" alt="{{ equipment.name }}">
     <p>Type: {{ equipment.type }}</p>
     <p>Status: {{ equipment.equipmentStatus }}</p>   
-  </div>
-s  
+    <button (click)="delete(equipment.equipmentId)">Delete</button>   
+    <button (click)="update(equipment.equipmentId)">update</button>   
+</div>

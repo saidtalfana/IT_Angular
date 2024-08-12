@@ -70,7 +70,10 @@ export class ServiceService {
                      AddEquipment(equipement: Equipment, user_id: number): Observable<Equipment> {
                       return this.http.post<Equipment>(`${this.API_EQUIPEMENT}/add_equipment?user_id=${user_id}`, equipement);
                     }
-                    
+                     //  <?--------------get equipment ------------------->
+                     getEquipment(equipment_id: number): Observable<Equipment> {
+                      return this.http.get<Equipment>(`${this.API_EQUIPEMENT}/get_equipment/${equipment_id}`);
+                    }
                      //  <?--------------all equipment ------------------->
                        fetchAllEquipment():Observable<Technician[]>{
                            return this.http.get<Technician[]>(`${this.API_EQUIPEMENT}/all_equipment`)}
@@ -80,8 +83,8 @@ export class ServiceService {
                             return this.http.delete<Equipment>(`${this.API_EQUIPEMENT}/delete_equipment/${id}`)}
 
                        //  <?--------------update equipment ------------------->
-                        updateEquipment(equipement:Equipment,id:number):Observable<Equipment>{
-                          return this.http.put<Equipment>(`${this.API_EQUIPEMENT}/update_equipment/${id}`,equipement)}
+                        updateEquipment(equipement:Equipment,id:number,user_id:number):Observable<Equipment>{
+                          return this.http.put<Equipment>(`${this.API_EQUIPEMENT}/update_equipment/${id}?user_id=${user_id}`,equipement)}
                       
  //  <?----------------------------------Ticket---------------------------------------->
               //  <?--------------add ticket ------------------->

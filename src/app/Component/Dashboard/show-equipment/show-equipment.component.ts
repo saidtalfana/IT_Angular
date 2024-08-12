@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { EquipmentStatus } from 'src/app/enums/EquipmentStatus';
 import { Equipment } from 'src/app/model/Equipment';
 import { ServiceService } from 'src/app/service/service.service';
@@ -11,7 +12,7 @@ import { ServiceService } from 'src/app/service/service.service';
 export class ShowEquipmentComponent implements OnInit {
   equipmentList:Equipment[]=[]
 
-  constructor(private service:ServiceService) { }
+  constructor(private service:ServiceService,private router:Router) { }
 
   ngOnInit(): void {
 
@@ -23,5 +24,11 @@ export class ShowEquipmentComponent implements OnInit {
     this.equipmentList=res
   )
  }
- 
+
+delete(equipmentId:number){
+  this.service.deleteEquipment(equipmentId).subscribe()
+}
+update(equipmentId: number): void {
+  this.router.navigate(['/edit-equipment', equipmentId]);
+}
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Equipment } from 'src/app/model/Equipment';
 import { ServiceService } from 'src/app/service/service.service';
 
 @Component({
@@ -11,7 +13,11 @@ export class AddEquipmentComponent implements OnInit {
 
   formAdd!: FormGroup;
 
-  constructor(private service: ServiceService, private fb: FormBuilder) { }
+  equipmentId?: number;
+
+
+  constructor(private service: ServiceService, private fb: FormBuilder,
+    private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.formAdd = this.fb.group({
@@ -22,24 +28,61 @@ export class AddEquipmentComponent implements OnInit {
       equipmentStatus: ['', Validators.required],
       userId: ['', Validators.required],
     });
+    this.route.params.subscribe(params => {
+      this.equipmentId = +params['id'];
+      if (this.equipmentId) {
+        this.loadEquipment();
+      }
+    })
   }
+
+  loadEquipment(): void {
+    this.service.getEquipment(this.equipmentId!).subscribe(
+      (equipment: Equipment) => {
+        this.formAdd.patchValue(equipment);
+      },
+      error => {
+        console.error('Error fetching equipment', error);
+      }
+    );
+  }
+
   onSubmit(): void {
     if (this.formAdd.valid) {
-      const newEquipme: any = this.formAdd.value;
-      const userId: number = Number(newEquipme.userId); // Convert to number if needed
-      this.service.AddEquipment(newEquipme, userId).subscribe(
-        response => {
-          console.log('Equipment added successfully', response);
-        },
-        error => {
-          console.error('Error adding equipment', error);
-        }
-      );
+      const formValue = this.formAdd.value;
+      const equipmentId:number | undefined = this.equipmentId; // Use the equipmentId for updating
+      const userId = Number(formValue.userId); // Ensure userId is treated as a number
+  
+      if (equipmentId) {
+        // Update existing equipment
+        this.service.updateEquipment( formValue,equipmentId, userId).subscribe(
+          response => {
+            console.log('Equipment updated successfully', response);
+            this.router.navigate(['/show-equipment']); // Navigate back to the list
+          },
+          error => {
+            console.error('Error updating equipment', error);
+          }
+        );
+      } else {
+        // Add new equipment
+        this.service.AddEquipment(formValue, userId).subscribe(
+          response => {
+            console.log('Equipment added successfully', response);
+            this.router.navigate(['/show-equipment']); // Navigate back to the list
+          },
+          error => {
+            console.error('Error adding equipment', error);
+          }
+        );
+      }
+  
+      this.formAdd.reset(); // Reset the form after submission
     } else {
       console.log('Form is invalid');
     }
-  
-    this.formAdd.reset(); // Reset the form after submission
   }
   
 }
+
+
