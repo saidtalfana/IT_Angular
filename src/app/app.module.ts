@@ -20,12 +20,12 @@ import { UpdateTicketComponent } from './Component/Technician/update-ticket/upda
 import { AddTicketComponent } from './Component/User/add-ticket/add-ticket.component';
 import { UserComponent } from './Component/User/user/user.component';
 
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { SignupComponent } from './Component/Main/signup/signup.component'
 import { MainComponent } from './Component/Main/main/main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HeaderComponent } from './Component/Main/header/header.component';
 import { HomeComponent } from './Component/Main/home/home.component';
+import { Interciptor } from './interciptor/interciptor';
 
 
 
@@ -43,7 +43,6 @@ import { HomeComponent } from './Component/Main/home/home.component';
       ShowEquipmentComponent,
       ShowTechnicianComponent,
       ShowUserComponent,
-      HeaderComponent,
       HomeComponent,
       MainComponent,
       SigninComponent,
@@ -65,7 +64,13 @@ import { HomeComponent } from './Component/Main/home/home.component';
 
     
     ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: Interciptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

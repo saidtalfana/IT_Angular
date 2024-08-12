@@ -47,7 +47,7 @@ export class SigninComponent implements OnInit {
         const decodedToken: any = jwtDecode(response.token);
 
         if (decodedToken.roles.includes(Role.ADMIN)) {
-          this.router.navigate(['/add']);
+          this.router.navigate(['/dashboard']);
         } 
         else if (decodedToken.roles.includes(Role.TECHNICIAN)) {
           this.router.navigate(['/technician']);
