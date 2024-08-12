@@ -1,1 +1,7 @@
-<p>show-technician works!</p>
+<div *ngFor="let technician of technicianList">
+    <h1>{{ technician.name }}</h1>
+    <p>{{ technician.username }}</p>
+    <p>Email: {{ technician.email }}</p>
+    <p>id: {{ technician.id }}</p>   
+    <button (click)="delete(technician.id)">Delete</button>   
+</div>

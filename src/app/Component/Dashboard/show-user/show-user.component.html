@@ -1,1 +1,8 @@
-<p>show-user works!</p>
+
+<div *ngFor="let user of listUser">
+    <p>{{user.name}}</p>
+    <p>{{user.username}}</p>
+    <p>{{user.email}}</p>
+    <p>{{user.id}}</p>
+    <button (click)="delete(user.id)">delete</button>
+   </div>

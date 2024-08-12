@@ -5,9 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SigninComponent } from './Component/Main/signin/signin.component';
 import { AddEquipmentComponent } from './Component/Dashboard/add-equipment/add-equipment.component';
-import { AddFailureComponent } from './Component/Dashboard/add-failure/add-failure.component';
-import { AddTechnicianComponent } from './Component/Dashboard/add-technician/add-technician.component';
-import { AddUserComponent } from './Component/Dashboard/add-user/add-user.component';
 import { ChartComponent } from './Component/Dashboard/chart/chart.component';
 import { DashboardComponent } from './Component/Dashboard/dashboard/dashboard.component';
 import { LogoutComponent } from './Component/Dashboard/logout/logout.component';
@@ -34,9 +31,6 @@ import { Interciptor } from './interciptor/interciptor';
   declarations: [
       AppComponent,
       AddEquipmentComponent,
-      AddFailureComponent,
-      AddTechnicianComponent,
-      AddUserComponent,
       ChartComponent,
       DashboardComponent,
       LogoutComponent,

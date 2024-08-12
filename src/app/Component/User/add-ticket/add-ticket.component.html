@@ -1,1 +1,33 @@
-<p>add-ticket works!</p>
+<form [formGroup]="formTicket" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="description">Description:</label><br>
+      <textarea id="description" formControlName="description"  ></textarea>
+    </div>
+  
+    <label for="ticketStatus">ticketStatus:</label>
+    <select id="ticketStatus" formControlName="ticketStatus"  required>
+      <option value="IN_PROGRESS">IN_PROGRESS</option>
+      <option value="PROBLEME_NOT_FIXED">PROBLEME_NOT_FIXED</option>
+      <option value="PROBLEM_FIXED">PROBLEM_FIXED</option>
+    </select>
+
+    <div class="form-group">
+      <label for="equipmentId">Equipment id:</label><br>
+      <input id="equipmentId" formControlName="equipmentId" type="text"  />
+    </div>
+
+
+
+    <div class="form-group">
+        <label for="failureId">Failure id:</label><br>
+        <input id="failureId" formControlName="failureId" type="text"  />
+  
+      </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="formTicket.invalid">Add Ticket</button>
+  </form>
+
+
+
+
+    
