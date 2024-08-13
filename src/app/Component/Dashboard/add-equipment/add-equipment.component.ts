@@ -50,26 +50,24 @@ export class AddEquipmentComponent implements OnInit {
   onSubmit(): void {
     if (this.formAdd.valid) {
       const formValue = this.formAdd.value;
-      const equipmentId:number | undefined = this.equipmentId; // Use the equipmentId for updating
-      const userId = Number(formValue.userId); // Ensure userId is treated as a number
+      const equipmentId:number | undefined = this.equipmentId; 
+      const userId = Number(formValue.userId); 
   
       if (equipmentId) {
-        // Update existing equipment
         this.service.updateEquipment( formValue,equipmentId, userId).subscribe(
           response => {
             console.log('Equipment updated successfully', response);
-            this.router.navigate(['/show-equipment']); // Navigate back to the list
+            this.router.navigate(['/show-equipment']); 
           },
           error => {
             console.error('Error updating equipment', error);
           }
         );
       } else {
-        // Add new equipment
         this.service.AddEquipment(formValue, userId).subscribe(
           response => {
             console.log('Equipment added successfully', response);
-            this.router.navigate(['/show-equipment']); // Navigate back to the list
+            this.router.navigate(['/show-equipment']); 
           },
           error => {
             console.error('Error adding equipment', error);
@@ -77,7 +75,7 @@ export class AddEquipmentComponent implements OnInit {
         );
       }
   
-      this.formAdd.reset(); // Reset the form after submission
+      this.formAdd.reset(); 
     } else {
       console.log('Form is invalid');
     }

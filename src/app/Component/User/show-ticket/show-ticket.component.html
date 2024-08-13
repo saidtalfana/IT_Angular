@@ -1,1 +1,6 @@
-<p>show-ticket works!</p>
+<div *ngFor="let ticket of listTicket">
+    <p>{{ticket.date}}</p>
+    <p>{{ticket.time}}</p>
+    <p>{{ticket.description}}</p>
+    <p>{{ticket.ticketStatus}}</p>
+</div>

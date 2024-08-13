@@ -23,6 +23,7 @@ import { MainComponent } from './Component/Main/main/main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './Component/Main/home/home.component';
 import { Interciptor } from './interciptor/interciptor';
+import { AddFailureComponent } from './Component/Dashboard/add-failure/add-failure.component';
 
 
 
@@ -48,6 +49,7 @@ import { Interciptor } from './interciptor/interciptor';
       ShowTicketComponent,
       UserComponent,
       MainComponent,
+      AddFailureComponent,
   ],
   imports: [
     BrowserModule,

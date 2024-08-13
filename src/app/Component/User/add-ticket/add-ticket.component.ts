@@ -31,7 +31,10 @@ onSubmit(){
   const value:Ticket=this.formTicket.value
   const equipmentId:number=this.formTicket.value.equipmentId   
   const failureId:number=this.formTicket.value.failureId   
-  const user_id:number=this.formTicket.value.failure_id   
+  const user_id:number=352
+  console.log(equipmentId)  
+  console.log(failureId)  
+  console.log(user_id)  
   if(value){
     this.service.addTicket(value,equipmentId,failureId,user_id).subscribe()
   }

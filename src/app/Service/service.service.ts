@@ -98,6 +98,10 @@ export class ServiceService {
                            
                          return this.http.post<Ticket>(url,ticket, { headers })
               }
+             //  <?--------------fetch ticket by user id ------------------->
+                  fetchTicketByUserId(id:number){
+                   return this.http.get<Ticket[]>(`${this.API_TICKET}/all_ticket_user_id/${id}`)
+                  }
              //  <?--------------update ticket by admin ------------------->
              updateTicketByAdmin(ticket:Ticket,id:number,technician_id:number):Observable<Ticket>{
                     return this.http.put<Ticket>(`${this.API_TICKET}/update_ticket_admin/${id}?technician_id=${technician_id}`,ticket)}

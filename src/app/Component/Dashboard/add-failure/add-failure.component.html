@@ -1,0 +1,19 @@
+<form [formGroup]="formFailure" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="description">Description:</label><br>
+      <textarea id="description" formControlName="description"  ></textarea>
+    </div>
+    <label for="failureType">failureType:</label>
+    <select id="failureType" formControlName="failureType"  required>
+      <option value="SYSTEM">SYSTEM</option>
+      <option value="MOUSE">MOUSE</option>
+      <option value="MONITOR">MONITOR</option>
+      <option value="KEYBOARD">KEYBOARD</option>
+    </select>
+    <button type="submit" class="btn btn-primary" [disabled]="formFailure.invalid">Add Failure</button>
+  </form>
+
+
+  
+
