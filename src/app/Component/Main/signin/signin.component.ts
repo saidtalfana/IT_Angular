@@ -41,6 +41,7 @@ export class SigninComponent implements OnInit {
 
     this.service.signin(loginRequest).subscribe({
       next: (response) => {
+        console.log(response)
         const { token} = response;
         localStorage.setItem('jwt', token);
 

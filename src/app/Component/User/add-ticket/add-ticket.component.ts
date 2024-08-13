@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Ticket } from 'src/app/model/Ticket';
 import { ServiceService } from 'src/app/service/service.service';
+import {jwtDecode}  from 'jwt-decode';
 
 @Component({
   selector: 'app-add-ticket',
@@ -11,12 +12,16 @@ import { ServiceService } from 'src/app/service/service.service';
 export class AddTicketComponent implements OnInit {
 
   formTicket!:FormGroup
+  user_id!:number
   constructor(private service:ServiceService,private fp:FormBuilder){
 
   }
 
   ngOnInit(): void {
-    this.addTicket()  }
+    this.addTicket() 
+    this.setUserIdFromToken() 
+  }
+
 addTicket(){
   this.formTicket = this.fp.group({
     description:["",Validators.required],
@@ -27,16 +32,30 @@ addTicket(){
   })
 }
 
+setUserIdFromToken(){
+  const token = localStorage.getItem("jwt");
+     if(token){
+      try{
+        const decodedToken: any = jwtDecode(token);
+        this.user_id = decodedToken.id;
+      }
+      catch (error) {
+        console.error('Failed to decode JWT:', error);
+      }
+
+     }
+}
+
+
 onSubmit(){
   const value:Ticket=this.formTicket.value
   const equipmentId:number=this.formTicket.value.equipmentId   
-  const failureId:number=this.formTicket.value.failureId   
-  const user_id:number=352
+  const failureId:number=this.formTicket.value.failureId  
+
   console.log(equipmentId)  
   console.log(failureId)  
-  console.log(user_id)  
   if(value){
-    this.service.addTicket(value,equipmentId,failureId,user_id).subscribe()
+    this.service.addTicket(value,equipmentId,failureId,this.user_id).subscribe()
   }
   else
   console.log("ticket was not sent to admin")
