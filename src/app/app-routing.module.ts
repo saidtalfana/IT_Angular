@@ -9,7 +9,7 @@ import { AddEquipmentComponent } from './Component/Dashboard/add-equipment/add-e
 import { ShowEquipmentComponent } from './Component/Dashboard/show-equipment/show-equipment.component';
 import { MainComponent } from './Component/Main/main/main.component';
 import { AddTicketComponent } from './Component/User/add-ticket/add-ticket.component';
-import { ShowTicketComponent } from './Component/Technician/show-ticket/show-ticket.component';
+import { ShowTicketComponent } from './Component/User/show-ticket/show-ticket.component';
 
 
   const routes: Routes = [

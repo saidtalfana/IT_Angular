@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Equipment } from 'src/app/model/Equipment';
+import { User } from 'src/app/model/User';
 import { ServiceService } from 'src/app/service/service.service';
 
 @Component({
@@ -14,6 +15,8 @@ export class AddEquipmentComponent implements OnInit {
   formAdd!: FormGroup;
 
   equipmentId?: number;
+
+  userList!:User[]
 
 
   constructor(private service: ServiceService, private fb: FormBuilder,
@@ -34,6 +37,7 @@ export class AddEquipmentComponent implements OnInit {
         this.loadEquipment();
       }
     })
+    this.allUsers()
   }
 
   loadEquipment(): void {
@@ -47,12 +51,19 @@ export class AddEquipmentComponent implements OnInit {
     );
   }
 
+allUsers(){
+  this.service.fetchAllUsers().subscribe((res:User[])=>{
+    this.userList = res
+  })
+}
+
   onSubmit(): void {
     if (this.formAdd.valid) {
       const formValue = this.formAdd.value;
       const equipmentId:number | undefined = this.equipmentId; 
-      const userId = Number(formValue.userId); 
-  
+      const userId : number = this.formAdd.value.userId
+        console.log(userId);
+        
       if (equipmentId) {
         this.service.updateEquipment( formValue,equipmentId, userId).subscribe(
           response => {

@@ -26,10 +26,14 @@
       <option value="NOT_WORKING">not working</option>
     </select>
     <div class="form-group">
-      <label for="userId">user id:</label><br>
-      <input id="userId" formControlName="userId" type="text"  />
-
-    </div>
+      <label for="userId">Equipment:</label><br>
+      <select id="userId" formControlName="userId" required>
+          <option *ngFor="let user of userList" [value]="user.id">
+              {{ user.name }}
+              {{ user.id }}
+          </option>
+      </select>
+  </div>
   
     <button type="submit" class="btn btn-primary" [disabled]="formAdd.invalid">Add Equipment</button>
   </form>

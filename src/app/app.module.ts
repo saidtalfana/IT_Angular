@@ -11,7 +11,6 @@ import { LogoutComponent } from './Component/Dashboard/logout/logout.component';
 import { ShowUserComponent } from './Component/Dashboard/show-user/show-user.component';
 import { ShowEquipmentComponent } from './Component/Dashboard/show-equipment/show-equipment.component';
 import { ShowTechnicianComponent } from './Component/Dashboard/show-technician/show-technician.component';
-import { ShowTicketComponent } from './Component/Technician/show-ticket/show-ticket.component';
 import { TechnicianComponent } from './Component/Technician/technician/technician.component';
 import { UpdateTicketComponent } from './Component/Technician/update-ticket/update-ticket.component';
 import { AddTicketComponent } from './Component/User/add-ticket/add-ticket.component';
@@ -24,6 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './Component/Main/home/home.component';
 import { Interciptor } from './interciptor/interciptor';
 import { AddFailureComponent } from './Component/Dashboard/add-failure/add-failure.component';
+import { AllTicketComponent } from './Component/Dashboard/all-ticket/all-ticket.component';
+import { ShowTicketComponent } from './Component/User/show-ticket/show-ticket.component';
 
 
 
@@ -32,6 +33,7 @@ import { AddFailureComponent } from './Component/Dashboard/add-failure/add-failu
   declarations: [
       AppComponent,
       AddEquipmentComponent,
+     
       ChartComponent,
       DashboardComponent,
       LogoutComponent,
@@ -42,7 +44,6 @@ import { AddFailureComponent } from './Component/Dashboard/add-failure/add-failu
       MainComponent,
       SigninComponent,
       SignupComponent,
-      ShowTicketComponent,
       TechnicianComponent,
       UpdateTicketComponent,
       AddTicketComponent,
@@ -50,6 +51,7 @@ import { AddFailureComponent } from './Component/Dashboard/add-failure/add-failu
       UserComponent,
       MainComponent,
       AddFailureComponent,
+      AllTicketComponent,
   ],
   imports: [
     BrowserModule,

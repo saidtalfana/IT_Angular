@@ -1,13 +1,17 @@
-<div>
- <h2>Login</h2>
+<div class="container">
+  <div class="decor-one"></div>
+  <div class="wrapper">
+    <div class="image"></div>
+      <div class="form">
 <form [formGroup]="loginForm" (ngSubmit)=" onSubmit()">
-   <label for="username">Username:</label>
    <input type="text" formControlName="username" id="username" required>
-   <label for="password">Password:</label>
-   <input type="password" formControlName="password" id="password" required>
-    <button type="submit">Login</button>
+   <input type="password" formControlName="password" id="password" required><br>
+   <button type="submit">Login</button>
   </form>
-  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+</div>
+  </div>
+ 
+  <div class="decor-two"></div>
 </div>
 
 

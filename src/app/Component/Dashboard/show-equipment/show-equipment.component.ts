@@ -5,7 +5,7 @@ import { Equipment } from 'src/app/model/Equipment';
 import { ServiceService } from 'src/app/service/service.service';
 
 @Component({
-  selector: 'app-show-equipment',
+  selector: 'app-show-equipment ',
   templateUrl: './show-equipment.component.html',
   styleUrls: ['./show-equipment.component.css']
 })
@@ -20,7 +20,7 @@ export class ShowEquipmentComponent implements OnInit {
    
   }
  fetchEquipmentById(){
-  this.service.fetchAllEquipment().subscribe((res:any[])=>
+  this.service.fetchAllEquipment().subscribe((res:Equipment[])=>
     this.equipmentList=res
   )
  }

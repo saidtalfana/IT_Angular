@@ -11,6 +11,7 @@ import { Role } from '../enums/Role';
 import { User } from '../model/User';
 import { Technician } from '../model/Technician';
 import { Equipment } from '../model/Equipment';
+import { Failure } from '../model/Failure';
 
 @Injectable({
   providedIn: 'root'
@@ -46,6 +47,11 @@ export class ServiceService {
                       //  <?--------------add failure ------------------->
                    addFailure(failureDto:FailureDto){
                          return this.http.post<FailureDto>(`${this.API_FAILURE}/add_failure`,failureDto) }
+                      //  <?--------------all failures ------------------->
+                      getFailures():Observable<Failure[]>{
+                        return this.http.get<Failure[]>(`${this.API_FAILURE}/all_failure`)
+                      }
+
       //  <?----------------------------------User -------------------------------------->
                        //  <?--------------all users ------------------->
                     fetchAllUsers():Observable<User[]>{
@@ -74,9 +80,14 @@ export class ServiceService {
                      getEquipment(equipment_id: number): Observable<Equipment> {
                       return this.http.get<Equipment>(`${this.API_EQUIPEMENT}/get_equipment/${equipment_id}`);
                     }
+
+                      //  <?--------------get equipment by user id------------------->
+                      getEquipmentsByUserId(user_id: number): Observable<Equipment[]> {
+                        return this.http.get<Equipment[]>(`${this.API_EQUIPEMENT}/get_equipment_by_user_id/${user_id}`);
+                      }
                      //  <?--------------all equipment ------------------->
-                       fetchAllEquipment():Observable<Technician[]>{
-                           return this.http.get<Technician[]>(`${this.API_EQUIPEMENT}/all_equipment`)}
+                       fetchAllEquipment():Observable<Equipment[]>{
+                           return this.http.get<Equipment[]>(`${this.API_EQUIPEMENT}/all_equipment`)}
 
                       //  <?--------------delete equipment ------------------->
                         deleteEquipment(id:number):Observable<Equipment>{
@@ -99,12 +110,17 @@ export class ServiceService {
                          return this.http.post<Ticket>(url,ticket, { headers })
               }
              //  <?--------------fetch ticket by user id ------------------->
-                  fetchTicketByUserId(id:number){
-                   return this.http.get<Ticket[]>(`${this.API_TICKET}/all_ticket_user_id/${id}`)
+                  fetchTicketByUserId(user_id:number):Observable<Ticket[]>{
+                   return this.http.get<Ticket[]>(`${this.API_TICKET}/all_ticket_user_id/${user_id}`)
                   }
+
+                  //  <?--------------fetch ticket by user id ------------------->
+                  fetchAllTicket(){
+                    return this.http.get<Ticket[]>(`${this.API_TICKET}/all_ticket`)
+                   }
              //  <?--------------update ticket by admin ------------------->
-             updateTicketByAdmin(ticket:Ticket,id:number,technician_id:number):Observable<Ticket>{
-                    return this.http.put<Ticket>(`${this.API_TICKET}/update_ticket_admin/${id}?technician_id=${technician_id}`,ticket)}
+             updateTicketByAdmin(id:number,technician_id:number):Observable<Ticket>{
+                    return this.http.put<Ticket>(`${this.API_TICKET}/update_ticket_admin/${id}?technician_id=${technician_id}`,{})}
  
                       //  <?--------------updqte ticket by technician ------------------->
              updateTicketByTechnician(ticket:Ticket,id:number):Observable<Ticket>{

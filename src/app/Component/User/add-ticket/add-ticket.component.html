@@ -10,19 +10,23 @@
       <option value="PROBLEME_NOT_FIXED">PROBLEME_NOT_FIXED</option>
       <option value="PROBLEM_FIXED">PROBLEM_FIXED</option>
     </select>
+    <div class="form-group">
+      <label for="equipmentId">Equipment:</label><br>
+      <select id="equipmentId" formControlName="equipmentId" required>
+          <option *ngFor="let equipment of equipmentList" [value]="equipment.equipmentId">
+              {{ equipment.name }}
+          </option>
+      </select>
+  </div>
 
     <div class="form-group">
-      <label for="equipmentId">Equipment id:</label><br>
-      <input id="equipmentId" formControlName="equipmentId" type="text"  />
-    </div>
-
-
-
-    <div class="form-group">
-        <label for="failureId">Failure id:</label><br>
-        <input id="failureId" formControlName="failureId" type="text"  />
-  
-      </div>
+      <label for="failureId">Failure:</label><br>
+      <select id="failureId" formControlName="failureId" required>
+          <option *ngFor="let failure of failureList" [value]="failure.failureId">
+              {{ failure.failureType }}
+          </option>
+      </select>
+  </div>
 
     <button type="submit" class="btn btn-primary" [disabled]="formTicket.invalid">Add Ticket</button>
   </form>
