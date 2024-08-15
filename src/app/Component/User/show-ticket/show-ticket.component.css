@@ -1,0 +1,51 @@
+.ticket{
+    background-color: rgba(234, 214, 159, 0.873);
+    width: 450px;
+    height: 250px;
+    border: 1px solid black;
+    margin-left: 7px;
+    margin-top: 7px;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.description{
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px dashed black;
+    text-align: center;
+
+}
+.status{
+    background-color: rgb(254, 254, 254);
+    border-bottom: 1px dashed black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.container{
+    display: flex;
+    background-color: rgb(250, 251, 251);
+    flex-wrap: wrap;
+
+}
+.date{
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px dashed black;
+    text-align: center;
+
+}
+.time{
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px dashed black;
+    text-align: center;
+
+}
+.line{
+    border-bottom: 1px solid black;
+
+}

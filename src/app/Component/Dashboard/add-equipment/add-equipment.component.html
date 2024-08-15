@@ -1,4 +1,11 @@
-<form [formGroup]="formAdd" (ngSubmit)="onSubmit()">
+<div class="one">
+  <div class="nav">
+  <app-side-bar></app-side-bar>
+</div>
+  
+
+<div class="content">
+  <form [formGroup]="formAdd" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Equipment Name:</label><br>
       <input id="name" formControlName="name" type="text"  />
@@ -9,11 +16,6 @@
       <textarea id="description" formControlName="description"  ></textarea>
     </div>
   
-    <div class="form-group">
-      <label for="image">Image:</label><br>
-      <input id="image" formControlName="image" type="text"  />
-
-    </div>
   
     <div class="form-group">
       <label for="type">Type:</label><br>
@@ -22,8 +24,8 @@
     </div>
     <label for="equipmentStatus">Status:</label>
     <select id="equipmentStatus" formControlName="equipmentStatus"  required>
-      <option value="WORKING">working</option>
-      <option value="NOT_WORKING">not working</option>
+      <option value="NEW">NEW</option>
+      <option value="OLD">OLD</option>
     </select>
     <div class="form-group">
       <label for="userId">Equipment:</label><br>
@@ -37,4 +39,11 @@
   
     <button type="submit" class="btn btn-primary" [disabled]="formAdd.invalid">Add Equipment</button>
   </form>
+</div>
+</div>
+
+
+
+
+
   

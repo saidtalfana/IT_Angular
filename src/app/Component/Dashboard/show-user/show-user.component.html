@@ -1,8 +1,17 @@
+<div class="one">
+    <div class="nav">
+    <app-side-bar></app-side-bar>
+  </div>
+    
+  
+  <div class="content">
+    <div *ngFor="let user of listUser">
+        <p>{{user.name}}</p>
+        <p>{{user.username}}</p>
+        <p>{{user.email}}</p>
+        <p>{{user.id}}</p>
+        <button (click)="delete(user.id)">delete</button>
+       </div> 
+</div>
+</div>
 
-<div *ngFor="let user of listUser">
-    <p>{{user.name}}</p>
-    <p>{{user.username}}</p>
-    <p>{{user.email}}</p>
-    <p>{{user.id}}</p>
-    <button (click)="delete(user.id)">delete</button>
-   </div>

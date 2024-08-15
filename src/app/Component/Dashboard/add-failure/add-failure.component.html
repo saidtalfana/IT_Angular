@@ -1,6 +1,13 @@
-<form [formGroup]="formFailure" (ngSubmit)="onSubmit()">
+<div class="one">
+  <div class="nav">
+  <app-side-bar></app-side-bar>
+</div>
+  
 
-    <div class="form-group">
+<div class="content">
+  <form [formGroup]="formFailure" (ngSubmit)="onSubmit()">
+
+    <div >
       <label for="description">Description:</label><br>
       <textarea id="description" formControlName="description"  ></textarea>
     </div>
@@ -14,6 +21,8 @@
     <button type="submit" class="btn btn-primary" [disabled]="formFailure.invalid">Add Failure</button>
   </form>
 
+</div>
+</div>
 
   
 

@@ -8,7 +8,6 @@ export interface Equipment {
     equipmentId: number;
     name: string;
     description: string; 
-    image: string;
     type: string;
     equipmentStatus: EquipmentStatus;
     admin:Admin;

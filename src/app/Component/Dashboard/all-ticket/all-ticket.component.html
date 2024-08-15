@@ -1,8 +1,17 @@
-<h1>this is the best way</h1>
+<div class="one">
+    <div class="nav">
+    <app-side-bar></app-side-bar>
+  </div>
+    
+  
+  <div class="content">
+
 <div *ngFor="let ticket of listAllTicket">
     <p>{{ticket.date}}</p>
     <p>{{ticket.time}}</p>
     <p>{{ticket.description}}</p>
     <p>{{ticket.ticketStatus}}</p>
     <button (click)="update(ticket.ticketId)">assigne ticket</button>
+</div>
+</div>
 </div>

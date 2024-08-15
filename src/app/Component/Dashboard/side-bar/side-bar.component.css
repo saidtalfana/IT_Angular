@@ -1,0 +1,30 @@
+
+.side{
+    background-color: rgb(28, 185, 59);
+    width: 299px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.component{
+    margin-right: 32px;
+    color: white;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 10px 20px;
+    background-color: green;
+    width: 100%;
+}
+
+
+ul{
+    text-decoration: none;
+    color: whitesmoke;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

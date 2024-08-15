@@ -28,6 +28,7 @@ import { UpdateTicketComponent } from './Component/Dashboard/update-ticket/updat
 import { UpdateTicketTechComponent } from './Component/Technician/update-ticket-tech/update-ticket-tech.component';
 import { ShowTicketTechComponent } from './Component/Technician/show-ticket-tech/show-ticket-tech.component';
 import { NavComponent } from './Component/User/nav/nav.component';
+import { SideBarComponent } from './Component/Dashboard/side-bar/side-bar.component';
 
 
 
@@ -48,6 +49,7 @@ import { NavComponent } from './Component/User/nav/nav.component';
       NavComponent,
       HomeComponent,
       MainComponent,
+      SideBarComponent,
       SigninComponent,
       SignupComponent,
       TechnicianComponent,
@@ -61,6 +63,7 @@ import { NavComponent } from './Component/User/nav/nav.component';
       UpdateTicketTechComponent,
       ShowTicketTechComponent,
       NavComponent,
+      SideBarComponent,
   ],
   imports: [
     BrowserModule,

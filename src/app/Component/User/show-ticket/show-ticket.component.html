@@ -1,10 +1,14 @@
 <app-nav></app-nav>
-<h1>this is the best way</h1>
-<div *ngFor="let ticket of listTicket">
-    <p>{{ticket.date}}</p>
-    <p>{{ticket.time}}</p>
-    <p>{{ticket.description}}</p>
-    <p>{{ticket.ticketStatus}}</p>
-
-    
+<div class="container">
+<div *ngFor="let ticket of listTicket" class="ticket">
+    <div class="line"></div>
+    <div class="date"><p>{{ticket.date}}</p></div>
+    <div class="line"></div>
+    <div class="time"><p>{{ticket.time}}</p></div>
+    <div class="line"></div>
+    <div class="description"><p>{{ticket.description}}</p></div>
+    <div class="line"></div>
+    <div class="status"><p>{{ticket.ticketStatus}}</p></div>
 </div>
+</div>
+

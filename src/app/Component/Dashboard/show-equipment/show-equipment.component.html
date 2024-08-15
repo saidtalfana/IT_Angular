@@ -1,9 +1,16 @@
+
+<div class="one">
+    <div class="nav">
+    <app-side-bar></app-side-bar>
+  </div>
+  <div class="content">
 <div *ngFor="let equipment of equipmentList">
     <h1>{{ equipment.name }}</h1>
     <p>{{ equipment.description }}</p>
-    <img *ngIf="equipment.image" [src]="equipment.image" alt="{{ equipment.name }}">
     <p>Type: {{ equipment.type }}</p>
     <p>Status: {{ equipment.equipmentStatus }}</p>   
     <button (click)="delete(equipment.equipmentId)">Delete</button>   
     <button (click)="update(equipment.equipmentId)">update</button>   
+</div>
+</div>
 </div>

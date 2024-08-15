@@ -26,7 +26,6 @@ export class AddEquipmentComponent implements OnInit {
     this.formAdd = this.fb.group({
       name: ['', Validators.required],
       description: ['', Validators.required],
-      image: ['', Validators.required],
       type: ['', Validators.required],
       equipmentStatus: ['', Validators.required],
       userId: ['', Validators.required],
