@@ -19,7 +19,6 @@ export class ShowTicketComponent implements OnInit {
   ngOnInit(): void {
     this.fetchId()
     this.fetchAllTickets();
-    console.log(this.user_id);
 
   }
 

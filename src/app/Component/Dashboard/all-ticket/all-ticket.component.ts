@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Ticket } from 'src/app/model/Ticket';
 import { ServiceService } from 'src/app/service/service.service';
 
@@ -9,13 +10,13 @@ import { ServiceService } from 'src/app/service/service.service';
 })
 export class AllTicketComponent implements OnInit{
   listAllTicket : Ticket[]=[]
-   technician_id:number=102
-  constructor(private service:ServiceService){
+  constructor(private service:ServiceService,private router:Router){
 
   }
 
   ngOnInit(): void {
-this.fetchAllTicket()  }
+this.fetchAllTicket()  
+}
 
   fetchAllTicket(){
     this.service.fetchAllTicket().subscribe((res:Ticket[])=>{
@@ -23,8 +24,8 @@ this.fetchAllTicket()  }
     })
   }
 
-  update(id:number){
-  this.service.updateTicketByAdmin(id,this.technician_id).subscribe()
-
+  update(ticketId: number): void {
+    this.router.navigate(['/edit-ticket', ticketId]);
   }
+
 }

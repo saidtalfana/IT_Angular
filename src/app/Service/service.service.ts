@@ -109,20 +109,31 @@ export class ServiceService {
                            
                          return this.http.post<Ticket>(url,ticket, { headers })
               }
+              
              //  <?--------------fetch ticket by user id ------------------->
                   fetchTicketByUserId(user_id:number):Observable<Ticket[]>{
                    return this.http.get<Ticket[]>(`${this.API_TICKET}/all_ticket_user_id/${user_id}`)
                   }
 
-                  //  <?--------------fetch ticket by user id ------------------->
-                  fetchAllTicket(){
+                   //  <?--------------get ticket  ------------------->
+                   fetchTicket(id:number):Observable<Ticket>{
+                    return this.http.get<Ticket>(`${this.API_TICKET}/get_ticket/${id}`)
+                   }
+
+                  //  <?--------------fetch ticket by technician id ------------------->
+                  fetchTicketByTechnicianId(technician_id:number):Observable<Ticket[]>{
+                    return this.http.get<Ticket[]>(`${this.API_TICKET}/all_ticket_technician_id/${technician_id}`)
+                   }
+
+                  //  <?--------------fetch ticket all ticket ------------------->
+                  fetchAllTicket():Observable<Ticket[]>{
                     return this.http.get<Ticket[]>(`${this.API_TICKET}/all_ticket`)
                    }
              //  <?--------------update ticket by admin ------------------->
              updateTicketByAdmin(id:number,technician_id:number):Observable<Ticket>{
                     return this.http.put<Ticket>(`${this.API_TICKET}/update_ticket_admin/${id}?technician_id=${technician_id}`,{})}
  
-                      //  <?--------------updqte ticket by technician ------------------->
+                      //  <?--------------update ticket by technician ------------------->
              updateTicketByTechnician(ticket:Ticket,id:number):Observable<Ticket>{
               return this.http.put<Ticket>(`${this.API_TICKET}/update_ticket_technician/${id}`,ticket)}
 

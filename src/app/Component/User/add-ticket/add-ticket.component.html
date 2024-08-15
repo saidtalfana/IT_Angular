@@ -1,7 +1,10 @@
+<app-nav></app-nav>
+<div class="container">
+  <div class="wrapper">
+
 <form [formGroup]="formTicket" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="description">Description:</label><br>
-      <textarea id="description" formControlName="description"  ></textarea>
+      <textarea id="description" formControlName="description" placeholder="enter description" ></textarea>
     </div>
   
     <label for="ticketStatus">ticketStatus:</label>
@@ -31,7 +34,9 @@
     <button type="submit" class="btn btn-primary" [disabled]="formTicket.invalid">Add Ticket</button>
   </form>
 
+</div>
+</div>
 
-
+  
 
     

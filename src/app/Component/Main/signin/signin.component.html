@@ -1,18 +1,28 @@
+
 <div class="container">
-  <div class="decor-one"></div>
+  <div class="squire"></div>
+  <div class="decore"></div>
   <div class="wrapper">
-    <div class="image"></div>
-      <div class="form">
-<form [formGroup]="loginForm" (ngSubmit)=" onSubmit()">
-   <input type="text" formControlName="username" id="username" required>
-   <input type="password" formControlName="password" id="password" required><br>
-   <button type="submit">Login</button>
-  </form>
+  <div class="image"></div>
+  <div class="form">
+  <form   [formGroup]="loginForm" (ngSubmit)=" onSubmit()">
+    <div class="mb-3">
+      <input class="inp" type="text" formControlName="username" class="form-control" placeholder="Enter your username">
+    </div>
+    <div class="mb-3">
+      <input type="password" formControlName="password" class="form-control" placeholder="Enter your username">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>
 </div>
-  </div>
- 
-  <div class="decor-two"></div>
 </div>
+</div>
+
+  
+
+
+
 
 
   

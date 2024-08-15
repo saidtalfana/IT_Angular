@@ -1,0 +1,12 @@
+<form   [formGroup]="formUpdateAdmin" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+    <label for="technicianId">all Technician</label>
+    <select id="technicianId" formControlName="technicianId">
+        <option *ngFor="let technician of listTechnician" [value]="technician.id">
+            {{technician.name}}
+            {{technician.id}}
+        </option>
+    </select>
+    <button type="submit" class="btn btn-primary" [disabled]="formUpdateAdmin.invalid">valider</button>
+</div>
+</form>

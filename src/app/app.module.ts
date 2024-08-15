@@ -12,7 +12,6 @@ import { ShowUserComponent } from './Component/Dashboard/show-user/show-user.com
 import { ShowEquipmentComponent } from './Component/Dashboard/show-equipment/show-equipment.component';
 import { ShowTechnicianComponent } from './Component/Dashboard/show-technician/show-technician.component';
 import { TechnicianComponent } from './Component/Technician/technician/technician.component';
-import { UpdateTicketComponent } from './Component/Technician/update-ticket/update-ticket.component';
 import { AddTicketComponent } from './Component/User/add-ticket/add-ticket.component';
 import { UserComponent } from './Component/User/user/user.component';
 
@@ -25,6 +24,10 @@ import { Interciptor } from './interciptor/interciptor';
 import { AddFailureComponent } from './Component/Dashboard/add-failure/add-failure.component';
 import { AllTicketComponent } from './Component/Dashboard/all-ticket/all-ticket.component';
 import { ShowTicketComponent } from './Component/User/show-ticket/show-ticket.component';
+import { UpdateTicketComponent } from './Component/Dashboard/update-ticket/update-ticket.component';
+import { UpdateTicketTechComponent } from './Component/Technician/update-ticket-tech/update-ticket-tech.component';
+import { ShowTicketTechComponent } from './Component/Technician/show-ticket-tech/show-ticket-tech.component';
+import { NavComponent } from './Component/User/nav/nav.component';
 
 
 
@@ -39,19 +42,25 @@ import { ShowTicketComponent } from './Component/User/show-ticket/show-ticket.co
       LogoutComponent,
       ShowEquipmentComponent,
       ShowTechnicianComponent,
+      UpdateTicketComponent,
+      UpdateTicketTechComponent,
       ShowUserComponent,
+      NavComponent,
       HomeComponent,
       MainComponent,
       SigninComponent,
       SignupComponent,
       TechnicianComponent,
-      UpdateTicketComponent,
       AddTicketComponent,
       ShowTicketComponent,
       UserComponent,
       MainComponent,
       AddFailureComponent,
       AllTicketComponent,
+      ShowTicketTechComponent,
+      UpdateTicketTechComponent,
+      ShowTicketTechComponent,
+      NavComponent,
   ],
   imports: [
     BrowserModule,

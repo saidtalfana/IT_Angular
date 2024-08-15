@@ -1,0 +1,12 @@
+<h1>this is the best way</h1>
+<div *ngFor="let ticket of listTicket">
+    <p>{{ticket.date}}</p>
+    <p>{{ticket.time}}</p>
+    <p>{{ticket.description}}</p>
+    <p>{{ticket.ticketStatus}}</p>
+    <p>{{ticket.ticketId}}</p>
+
+    <button (click)="update(ticket.ticketId)">change status</button>
+
+    
+</div>
