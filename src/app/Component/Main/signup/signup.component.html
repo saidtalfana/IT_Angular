@@ -1,4 +1,50 @@
-<div class="one">
+ <div class="one">
+  <div class="nav">
+  <app-side-bar></app-side-bar>
+</div>
+  
+
+<div class="content">
+<div class="container">
+  <div class="wrapper">
+
+<form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+
+  <label for="role">role:</label>
+    <select id="role" formControlName="role"  required>
+      <option value="ADMIN">ADMIN</option>
+      <option value="USER">USER</option>
+      <option value="TECHNICIAN">TECHNICIAN</option>
+    </select>
+
+
+    <div class="form-group">
+      <input type="text" id="name" formControlName="name" placeholder="enter name" />
+    </div>
+    <div class="form-group">
+      <input type="text" id="username" formControlName="username" placeholder="enter your user name" />
+    </div>
+
+    <div class="form-group">
+      <input type="email" id="email" formControlName="email" placeholder="enter your user email" />
+    </div>
+
+    <div class="form-group">
+      <input type="password" id="password" formControlName="password" placeholder="enter your user password" />
+    </div>
+
+      <button type="submit" class="btn btn-primary">Add person</button>
+  </form>
+
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+<!-- <div class="one">
   <div class="nav">
   <app-side-bar></app-side-bar>
 </div>
@@ -23,5 +69,5 @@
       <button type="submit">Sign Up</button>
     </form>
   </div>
-</div>
+</div> -->
   

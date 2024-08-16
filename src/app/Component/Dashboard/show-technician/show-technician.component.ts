@@ -10,6 +10,7 @@ import { ServiceService } from 'src/app/service/service.service';
 export class ShowTechnicianComponent implements OnInit{
 
   technicianList:Technician []=[]
+  ColumnTechnician:string[]=["id","name","email","delete"]
 constructor(private service:ServiceService){
 
 }

@@ -1,3 +1,5 @@
+
+
 <div class="one">
   <div class="nav">
   <app-side-bar></app-side-bar>
@@ -5,45 +7,53 @@
   
 
 <div class="content">
-  <form [formGroup]="formAdd" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="name">Equipment Name:</label><br>
-      <input id="name" formControlName="name" type="text"  />
-    </div>
-  
-    <div class="form-group">
-      <label for="description">Description:</label><br>
-      <textarea id="description" formControlName="description"  ></textarea>
-    </div>
-  
-  
-    <div class="form-group">
-      <label for="type">Type:</label><br>
-      <input id="type" formControlName="type" type="text"  />
+<div class="container">
+  <div class="wrapper">
 
-    </div>
-    <label for="equipmentStatus">Status:</label>
-    <select id="equipmentStatus" formControlName="equipmentStatus"  required>
-      <option value="NEW">NEW</option>
-      <option value="OLD">OLD</option>
-    </select>
-    <div class="form-group">
-      <label for="userId">Equipment:</label><br>
-      <select id="userId" formControlName="userId" required>
-          <option *ngFor="let user of userList" [value]="user.id">
-              {{ user.name }}
-              {{ user.id }}
-          </option>
-      </select>
+<form [formGroup]="formAdd" (ngSubmit)="onSubmit()">
+
+
+  <div class="form-group">
+    <label for="name">Equipment Name:</label><br>
+    <input id="name" formControlName="name" type="text"  />
   </div>
-  
+
+  <div class="form-group">
+    <label for="description">Description:</label><br>
+    <textarea id="description" formControlName="description"  ></textarea>
+  </div>
+
+
+  <div class="form-group">
+    <label for="type">Type:</label><br>
+    <input id="type" formControlName="type" type="text"  />
+
+  </div>
+
+  <label for="equipmentStatus">Status:</label>
+  <select id="equipmentStatus" formControlName="equipmentStatus"  required>
+    <option value="NEW">NEW</option>
+    <option value="OLD">OLD</option>
+  </select>
+  <div class="form-group">
+    <label for="userId">User </label><br>
+    <select id="userId" formControlName="userId" required>
+        <option *ngFor="let user of userList" [value]="user.id">
+            {{ user.name }}
+            {{ user.id }}
+        </option>
+    </select>
+</div>
+
+
     <button type="submit" class="btn btn-primary" [disabled]="formAdd.invalid">Add Equipment</button>
   </form>
+
+</div>
+</div>
+
 </div>
 </div>
 
 
 
-
-
-  

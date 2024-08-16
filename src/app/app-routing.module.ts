@@ -20,6 +20,8 @@ import { SideBarComponent } from './Component/Dashboard/side-bar/side-bar.compon
 import { HomeComponent } from './Component/Main/home/home.component';
 import { SignupComponent } from './Component/Main/signup/signup.component';
 import { NavComponent } from './Component/User/nav/nav.component';
+import { ShowTicketTechComponent } from './Component/Technician/show-ticket-tech/show-ticket-tech.component';
+import { NavBarComponent } from './Component/Technician/nav-bar/nav-bar.component';
 
 
   const routes: Routes = [
@@ -35,10 +37,12 @@ import { NavComponent } from './Component/User/nav/nav.component';
     { path: 'showTechnician', component: ShowTechnicianComponent },
     { path: 'showUser', component: ShowUserComponent },
     { path: 'sideBar', component: SideBarComponent },
-    { path: 'updateTicket', component: UpdateTicketComponent },
     { path: 'home', component: HomeComponent },
     { path: 'main', component: MainComponent },
     { path: 'signin', component: SigninComponent },
+    { path: 'updateTicketTech', component: UpdateTicketTechComponent },
+    { path: 'showTicketTech', component: ShowTicketTechComponent },
+    { path: 'navBar', component: NavBarComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'technician', component: TechnicianComponent },
     { path: 'addTicket', component: AddTicketComponent },
@@ -48,7 +52,7 @@ import { NavComponent } from './Component/User/nav/nav.component';
     { path: 'user', component: UserComponent },
 
     { path: 'edit-equipment/:id', component: AddEquipmentComponent },
-    { path: 'edit-ticket/:id', component: UpdateTicketComponent },
+    { path: 'edit-ticket/:id', component: AllTicketComponent },
     { path: 'ticket_id/:id', component: UpdateTicketTechComponent },
     { path: '', redirectTo: '/main', pathMatch: 'full' },
     { path: '**', redirectTo: '/main' }

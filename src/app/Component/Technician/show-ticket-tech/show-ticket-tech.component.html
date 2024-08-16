@@ -1,12 +1,41 @@
-<h1>this is the best way</h1>
-<div *ngFor="let ticket of listTicket">
-    <p>{{ticket.date}}</p>
-    <p>{{ticket.time}}</p>
-    <p>{{ticket.description}}</p>
-    <p>{{ticket.ticketStatus}}</p>
-    <p>{{ticket.ticketId}}</p>
+<app-nav-bar></app-nav-bar>
+  <div class="container-fluid">
+      <div class="ticket dark"  *ngFor="let ticket of listTicket">
+        
+        <div class="ticket-body">
+          <div class="passenger">
+            <p>Status</p>
+            <h4>{{ticket.ticketStatus}}</h4>
+          </div>
+          <div class="flight-info row">
+           
+            <div class="col-xs-6">
+              <p>Date</p>
+              <h4>{{ticket.date}}</h4>
+            </div>
+          </div>
+          <div class="flight-date">{{ticket.time}}</div>
+          <div class="barcode"></div>
+        </div>
+        <div class="footer">
+          <div class="disclaimer">{{ticket.description}}</div>
+          <div class="disclaimer"> <button (click)="update(ticket.ticketId)">Update status</button> </div>
+          
+        </div>
+      </div>
+    </div>
+  
+  
+  
+  
 
-    <button (click)="update(ticket.ticketId)">change status</button>
 
-    
-</div>
+
+
+
+
+
+
+
+
+

@@ -10,7 +10,7 @@ import { ServiceService } from 'src/app/service/service.service';
 export class ShowUserComponent implements OnInit {
 
       listUser : User[] = []
-
+      Column : string[] = ["id","name","email","delete"]
      constructor(private service:ServiceService){}
 
   ngOnInit(): void {
@@ -21,6 +21,6 @@ getAllUsers(){
     this.listUser = res )
 }
 delete(id:number){
-  this.service.deleteUser(id).subscribe()
+  this.service.deleteUser(id).subscribe();
 }
 }

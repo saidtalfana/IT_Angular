@@ -8,24 +8,27 @@ import { ServiceService } from 'src/app/service/service.service';
   templateUrl: './all-ticket.component.html',
   styleUrls: ['./all-ticket.component.css']
 })
-export class AllTicketComponent implements OnInit{
-  listAllTicket : Ticket[]=[]
-  constructor(private service:ServiceService,private router:Router){
+export class AllTicketComponent implements OnInit {
+  listAllTicket: Ticket[] = [];
+  selectedTicketId: number | null = null; // Track the currently selected ticket ID
 
-  }
+  constructor(private service: ServiceService, private router: Router) {}
 
   ngOnInit(): void {
-this.fetchAllTicket()  
-}
+    this.fetchAllTicket();
+  }
 
-  fetchAllTicket(){
-    this.service.fetchAllTicket().subscribe((res:Ticket[])=>{
-      this.listAllTicket=res
-    })
+  fetchAllTicket(): void {
+    this.service.fetchAllTicket().subscribe((res: Ticket[]) => {
+      this.listAllTicket = res;
+    });
   }
 
   update(ticketId: number): void {
-    this.router.navigate(['/edit-ticket', ticketId]);
+    this.selectedTicketId = this.selectedTicketId === ticketId ? null : ticketId;
   }
 
+  closeUpdateTicket(): void {
+    this.selectedTicketId = null;
+  }
 }

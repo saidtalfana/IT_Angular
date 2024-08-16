@@ -43,6 +43,10 @@ onSubmit(){
    
    
   this.service.updateTicketByAdmin(this.ticketId,technician_id).subscribe()
+
+  if(this.ticketId && technician_id){
+    alert("Ticket Updated")
+  }
   }
 
   getTechicians(){

@@ -1,4 +1,5 @@
 .container{
+    margin: 0%;
     background-color: #eaeaea;
     width: 100%;
     height: 100vh;
@@ -8,14 +9,14 @@
 }
 
 .wrapper{
-    background-color:aliceblue;
+    background-color:rgb(255, 255, 255);
 
 width: 44%;
 height: 63vh;
-border-radius: 12px;
 display: flex;
 justify-content: center;
 align-items: center;
+
 }
 
 form{
@@ -33,8 +34,14 @@ select,textarea{
     justify-content: center;
     align-items: center;
     border: none;
+    border-bottom: 2px solid rgb(37, 246, 4);
+
 
 }
 textarea{
     height: 64px; 
+}
+
+button{
+    margin-top: 20px;
 }

@@ -32,6 +32,10 @@ export class AddFailureComponent implements OnInit{
 
   this.Failure()
 
+  if(valuer){
+    alert("failure added")
+  }
+
  }
 
 }

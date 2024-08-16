@@ -29,7 +29,11 @@ import { UpdateTicketTechComponent } from './Component/Technician/update-ticket-
 import { ShowTicketTechComponent } from './Component/Technician/show-ticket-tech/show-ticket-tech.component';
 import { NavComponent } from './Component/User/nav/nav.component';
 import { SideBarComponent } from './Component/Dashboard/side-bar/side-bar.component';
-
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { NavBarComponent } from './Component/Technician/nav-bar/nav-bar.component';
 
 
 
@@ -64,6 +68,7 @@ import { SideBarComponent } from './Component/Dashboard/side-bar/side-bar.compon
       ShowTicketTechComponent,
       NavComponent,
       SideBarComponent,
+      NavBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +76,10 @@ import { SideBarComponent } from './Component/Dashboard/side-bar/side-bar.compon
     ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
+    MatTableModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatSidenavModule,
 
     
     ],

@@ -1,19 +1,14 @@
-
-
 <form [formGroup]="formUpdate" (ngSubmit)="onSubmit()">
-      <h2 *ngFor="let ticket of tickets" >
-        {{ticket.ticketStatus}}
-      </h2>
-    <label for="ticketStatus">ticketStatus:</label>
-    <select id="ticketStatus" formControlName="ticketStatus"  required>
+  <h2 *ngIf="tickets.length > 0">
+    {{ tickets[0].ticketStatus }}
+  </h2>
+  
+  <label for="ticketStatus">Ticket Status:</label>
+  <select id="ticketStatus" formControlName="ticketStatus" required>
     <option value="IN_PROGRESS">IN_PROGRESS</option>
-      <option value="PROBLEME_NOT_FIXED">PROBLEME_NOT_FIXED</option>
-      <option value="PROBLEM_FIXED">PROBLEM_FIXED</option>
-    </select>
-    <button type="submit" class="btn btn-primary" [disabled]="formUpdate.invalid">Add Ticket</button>
-  </form>
-
-
-
-
-    
+    <option value="PROBLEME_NOT_FIXED">PROBLEM_NOT_FIXED</option>
+    <option value="PROBLEM_FIXED">PROBLEM_FIXED</option>
+  </select>
+  
+  <button type="submit" class="btn btn-primary" [disabled]="formUpdate.invalid">Send</button>
+</form>

@@ -12,5 +12,16 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items:flex-start
+}
+.table{
+    margin-top: 74px;
+    width: 80%;
+    border: 2px solid rgb(14, 235, 3);
+    background-color: #eaeaea;
+
+}
+.btn{
+    border: 1px;
+    background-color: red;
 }

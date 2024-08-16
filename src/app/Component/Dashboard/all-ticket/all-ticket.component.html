@@ -1,17 +1,36 @@
 <div class="one">
-    <div class="nav">
+  <div class="nav">
     <app-side-bar></app-side-bar>
   </div>
-    
-  
-  <div class="content">
 
-<div *ngFor="let ticket of listAllTicket">
-    <p>{{ticket.date}}</p>
-    <p>{{ticket.time}}</p>
-    <p>{{ticket.description}}</p>
-    <p>{{ticket.ticketStatus}}</p>
-    <button (click)="update(ticket.ticketId)">assigne ticket</button>
-</div>
-</div>
+  <div class="content">
+    <div class="container-fluid">
+      <div class="ticket dark" *ngFor="let ticket of listAllTicket">
+        <div class="ticket-body">
+          <div class="passenger">
+            <p>Status</p>
+            <h4>{{ ticket.ticketStatus }}</h4>
+          </div>
+          <div class="flight-info row">
+            <div class="col-xs-6">
+              <p>Date</p>
+              <h4>{{ ticket.date }}</h4>
+            </div>
+          </div>
+          <div class="flight-date">{{ ticket.time }}</div>
+          <div class="barcode"></div>
+        </div>
+        <div class="footer">
+          <div class="disclaimer">{{ ticket.description }}</div>
+          <div class="disclaimer">
+            <button (click)="update(ticket.ticketId)">Assign Ticket</button>
+          </div>
+
+          <div *ngIf="selectedTicketId === ticket.ticketId">
+            <app-update-ticket></app-update-ticket>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
